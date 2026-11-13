@@ -356,7 +356,9 @@ screen town_map:
             hovered SetVariable("location_count", "Donut Shop")
             unhovered SetVariable("location_count", "Town Map")
 
-    if M_aqua.is_set('altar pass') and M_aqua.is_set('treasure pass') and M_aqua.is_set('squid pass') and M_aqua.is_set('maze pass') and loc_lair_unlocked:
+    # The Lair's art ships in "private/", which this release doesn't include.
+    # Only show it when those files exist, otherwise the map would crash.
+    if loc_lair_unlocked and renpy.loadable("private/map/lair01.png") and M_aqua.is_set('altar pass') and M_aqua.is_set('treasure pass') and M_aqua.is_set('squid pass') and M_aqua.is_set('maze pass'):
         imagebutton:
             focus_mask True
             pos (10,675)
@@ -383,7 +385,7 @@ screen town_map:
                 action Hide("town_map"), Hide("ui"), Function(playMusic), Jump("warehouse_dialogue")
             else:
                 action Hide("town_map"), Hide("ui"), Jump("night_sleep_map")
-            hovered SetVariable("location_count", "Lair")
+            hovered SetVariable("location_count", "Warehouse")
             unhovered SetVariable("location_count", "Town Map")
 
     add gTimer.image("car01{}")
@@ -393,3 +395,6 @@ screen town_map:
     add "sparkle02"
     add "sparkle03"
     add "cloud01"
+
+    # Task markers, NEXT banner and hover info (scripts/map/roadmap.rpy).
+    use roadmap_map_layer

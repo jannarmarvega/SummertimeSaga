@@ -35,6 +35,8 @@ screen rapbattle:
     for Rap in temp_list[player_point].rhymes:
         $ b = 380 + rap_index*60
         textbutton temp_list[player_point].rhymes[rap_index] style style.button["rapbattle"] text_style style.text["rapbattle_text"] pos a,b action If(temp_list[player_point].rhymes[rap_index] == temp_list[player_point].answer, Jump("end_phase"), [Hide("rapbattle"), Jump("rapbattle_lose")])
+        if persistent.cheat_hints and temp_list[player_point].rhymes[rap_index] == temp_list[player_point].answer:
+            text "{b}<< CORRECT{/b}" size 22 color "#7CFC00" outlines [(2, "#000000", 0, 0)] pos (a + 285, b + 22)
         $ rap_index += 1
     timer 0.02 repeat True action If(time_count > 0, SetVariable("time_count", time_count - 0.01), [Hide("rapbattle"), Jump("rapbattle_lose")])
     bar value time_count range timer_range pos 260,685 xmaximum 513 ymaximum 33 style "time_bar"

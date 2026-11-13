@@ -1,4 +1,5 @@
-screen eriks_basement tag eriks_house:
+screen eriks_basement:
+    tag eriks_house
     add "backgrounds/location_erik_basement01.jpg"
 
     imagebutton:

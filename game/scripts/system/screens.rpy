@@ -249,7 +249,8 @@ screen credits:
         hover "buttons/menu_name_back02.png"
         action If(_return == main_menu, Function(playMusic, "audio/music_title01.ogg"), Function(playMusic)), Return()
 
-screen creditsquick() tag menu:
+screen creditsquick():
+    tag menu
     add "backgrounds/menu_credits.jpg"
     imagebutton:
         idle "buttons/menu_name_back01.png"
@@ -258,7 +259,8 @@ screen creditsquick() tag menu:
         xpos 50
         ypos 675
 
-screen main_menu() tag menu:
+screen main_menu():
+    tag menu
     window:
         style "mm_root"
     add "backgrounds/menu_menu.jpg"
@@ -282,7 +284,8 @@ init -2:
     style mm_button:
         size_group "mm"
 
-screen navigation() tag menu:
+screen navigation():
+    tag menu
     imagemap:
         ground "backgrounds/menu_quickmenu.jpg"
         idle "backgrounds/menu_quickmenu.jpg"
@@ -358,7 +361,8 @@ init -2:
     style file_picker_button is large_button
     style file_picker_text is large_button_text
 
-screen preferences() tag menu:
+screen preferences():
+    tag menu
     imagemap:
         ground "backgrounds/menu_settings.jpg"
         idle "backgrounds/menu_settings.jpg"
@@ -383,7 +387,8 @@ screen preferences() tag menu:
     else:
         add "buttons/checkbox.png" pos 603,419
 
-screen quick_preferences tag menu:
+screen quick_preferences:
+    tag menu
     imagemap:
         ground "backgrounds/menu_settings.jpg"
         idle "backgrounds/menu_settings.jpg"
@@ -401,7 +406,8 @@ screen quick_preferences tag menu:
     else:
         add "buttons/checkbox.png" pos 603,278
 
-screen save() tag menu:
+screen save():
+    tag menu
     imagemap:
         ground "backgrounds/menu_saving01.jpg"
         idle "backgrounds/menu_saving01.jpg"
@@ -433,7 +439,8 @@ screen save() tag menu:
 
         hotspot (427, 136, 174, 48) action Return()
 
-screen load() tag menu:
+screen load():
+    tag menu
     imagemap:
         ground "backgrounds/menu_loading01.jpg"
         idle "backgrounds/menu_loading01.jpg"

@@ -104,7 +104,7 @@ screen popup_parts:
         pos (410,421)
         idle "buttons/shop_button_200.png"
         hover "buttons/shop_button_200b.png"
-        action [Function(inventory.buy_item, parts), If(inventory.money < 200, Show("popup_fail01"), If(parts in inventory.items, Show("popup_fail02"), Show("popup_parts"))), Function(quest_complete, quest05), Hide("popup_parts")]
+        action [Function(inventory.buy_item, parts), If(inventory.money < 200, Show("popup_fail01"), If(parts in inventory.items, Show("popup_fail02"), [Function(quest_complete, quest05), Show("popup_parts")])), Hide("popup_parts")]
 
 screen popup_swimsuit:
     imagebutton:

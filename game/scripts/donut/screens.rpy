@@ -33,6 +33,9 @@ screen donut_minigame:
     default glaze_name = ""
     default glaze_xpos = 0
 
+    if persistent.cheat_hints:
+        text "{b}HINT:{/b} Harold wants [harold_topping] + [harold_glaze]" size 22 color "#7CFC00" outlines [(2, "#000000", 0, 0)] xalign 0.5 ypos 10
+
     imagebutton:
         focus_mask True
         pos (65,151)

@@ -113,8 +113,17 @@ label map_dialogue:
     $ callScreen(location_count)
 
 label night_sleep_map:
-    scene townmap_night
-    player_name "I can't go there at night!"
+    # location_count still holds the building the player just clicked.
+    $ map_closed_place = location_count if location_count in RM_LOC else ""
+    $ map_closed_hours = rm_hours(map_closed_place)
+    $ location_count = "Town Map"
+    scene expression gTimer.image("townmap{}")
+    if map_closed_place and gTimer.is_evening():
+        player_name "{b}[map_closed_place]{/b} is closed in the evening. [map_closed_hours]."
+    elif map_closed_place:
+        player_name "I can't go to {b}[map_closed_place]{/b} at night. [map_closed_hours]."
+    else:
+        player_name "I can't go there at night!"
     $ callScreen("Town Map")
 
 label sleep_locked:

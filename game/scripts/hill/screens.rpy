@@ -9,16 +9,17 @@ screen hill:
             hover "objects/character_harold_02b.png"
             action Hide("hill"), Jump("harolds_car_dialogue")
 
-    imagebutton:
-        focus_mask True
-        pos (18,497)
-        if not gTimer.is_dark():
-            idle "private/objects/object_treehole_01.png"
-            hover "private/objects/object_treehole_01b.png"
-        else:
-            idle "private/objects/object_treehole_01_night.png"
-            hover "private/objects/object_treehole_01b_night.png"
-        action Hide("hill"), Jump("hill_tree")
+    if AQUA_CONTENT:
+        imagebutton:
+            focus_mask True
+            pos (18,497)
+            if not gTimer.is_dark():
+                idle "private/objects/object_treehole_01.png"
+                hover "private/objects/object_treehole_01b.png"
+            else:
+                idle "private/objects/object_treehole_01_night.png"
+                hover "private/objects/object_treehole_01b_night.png"
+            action Hide("hill"), Jump("hill_tree")
 
 screen hill_tree:
     imagebutton:

@@ -71,7 +71,7 @@ screen library_bookshelf:
             hover "buttons/book_03b.png"
             action Hide("library_bookshelf"), Jump("kamasutra")
 
-    if old_book not in inventory.items:
+    if AQUA_CONTENT and old_book not in inventory.items:
         imagebutton:
             focus_mask True
             pos (836,108)

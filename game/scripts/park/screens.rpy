@@ -56,7 +56,7 @@ screen bench03_options:
         )
 
 screen park_fountain:
-    if weird_coin not in inventory.items:
+    if AQUA_CONTENT and weird_coin not in inventory.items:
         imagebutton:
             focus_mask True
             align (0.44,0.81)

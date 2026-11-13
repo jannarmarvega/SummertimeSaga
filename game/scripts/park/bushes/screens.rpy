@@ -19,7 +19,7 @@ screen park_bushes:
 screen park_bushes_bag:
     add "backgrounds/location_park_bag.jpg"
 
-    if treasure_key not in inventory.items:
+    if AQUA_CONTENT and treasure_key not in inventory.items:
         imagebutton:
             focus_mask True
             pos (540,280)

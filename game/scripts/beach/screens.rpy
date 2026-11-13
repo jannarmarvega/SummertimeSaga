@@ -26,18 +26,19 @@ screen beach:
 screen beach_island:
     add "backgrounds/location_beach_island.jpg"
 
-    imagebutton:
-        focus_mask True
-        if M_aqua.get_state() == S_aqua_treasure_search:
-            pos (409,124)
-            idle "private/objects/object_statue_02.png"
-            hover "private/objects/object_statue_02b.png"
+    if AQUA_CONTENT:
+        imagebutton:
+            focus_mask True
+            if M_aqua.get_state() == S_aqua_treasure_search:
+                pos (409,124)
+                idle "private/objects/object_statue_02.png"
+                hover "private/objects/object_statue_02b.png"
 
-        else:
-            pos (311,124)
-            idle "private/objects/object_statue_03.png"
-            hover "private/objects/object_statue_03b.png"
-        action Hide("beach_island"), With(fade), Jump("beach_statue")
+            else:
+                pos (311,124)
+                idle "private/objects/object_statue_03.png"
+                hover "private/objects/object_statue_03b.png"
+            action Hide("beach_island"), With(fade), Jump("beach_statue")
 
     imagebutton:
         focus_mask True
