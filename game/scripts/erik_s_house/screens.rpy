@@ -1,4 +1,5 @@
-screen eriks_house tag eriks_house:
+screen eriks_house:
+    tag eriks_house
     add gTimer.image("backgrounds/location_erik_house{}.jpg")
 
     if not gTimer.is_dark():

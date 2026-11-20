@@ -9,6 +9,7 @@ init python:
     renpy.music.register_channel("sound3", "sfx", True)
 
 label splashscreen:
+    call app_password_gate
     $ gTimer = DayTimer()
     scene black
 

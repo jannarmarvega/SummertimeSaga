@@ -19,7 +19,7 @@ screen park_bushes:
 screen park_bushes_bag:
     add "backgrounds/location_park_bag.jpg"
 
-    if treasure_key not in inventory.items:
+    if AQUA_CONTENT and treasure_key not in inventory.items:
         imagebutton:
             focus_mask True
             pos (540,280)
@@ -32,4 +32,6 @@ screen park_bushes_bag:
         pos (350,700)
         idle "boxes/auto_option_generic_01.png"
         hover "boxes/auto_option_generic_01b.png"
-        action Hide("park_bushes_bag"), If(treasure_key in inventory.items, [Function(inventory.get_item, item = stolen_goods), Show("popup", Image = "boxes/popup_item_goods.png"), Function(M_mia.trigger, T_harold_found_goods)], NullAction()), Jump("park_bushes_dialogue")
+        # Without the Aqua private art the key never appears, so the goods
+        # would be unreachable; hand them over when Mia's story needs them.
+        action Hide("park_bushes_bag"), If((treasure_key in inventory.items or (not AQUA_CONTENT and M_mia.get_state() == S_mia_stolen_goods)) and stolen_goods not in inventory.items, [Function(inventory.get_item, item = stolen_goods), Show("popup", Image = "boxes/popup_item_goods.png"), Function(M_mia.trigger, T_harold_found_goods)], NullAction()), Jump("park_bushes_dialogue")

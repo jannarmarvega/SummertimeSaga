@@ -79,7 +79,8 @@ screen sis_computer:
         imagebutton idle "buttons/enter_02.png" hover "buttons/enter_02b.png" at Position(xpos = 780, ypos = 405) action Jump("pass_check")
         imagebutton idle "buttons/computer_button_01.png" hover "buttons/computer_button_01b.png" action [If(comp_locked == True and sis_diary_unlocked == True, [Hide("sis_computer"), SetVariable("in_sis_room", True), Jump("sispc_password_reminder")], [Hide("sis_computer"), SetVariable("in_sis_room", True), Jump("sis_bedroom_dialogue")])] pos 109,576
 
-screen summertime tag comp_screen:
+screen summertime:
+    tag comp_screen
     imagebutton idle "buttons/computer_window_07.png" action [Hide("sis_computer"), Hide("summertime"), Jump("sispc_summertime_response")] pos 270,150
 
     imagebutton:
@@ -89,7 +90,8 @@ screen summertime tag comp_screen:
         xpos 816
         ypos 154
 
-screen summertime_error tag comp_screen:
+screen summertime_error:
+    tag comp_screen
     add "buttons/computer_window_08.png" pos 270,150
 
     imagebutton:
@@ -99,7 +101,8 @@ screen summertime_error tag comp_screen:
         xpos 816
         ypos 154
 
-screen sis_webcam_screen tag comp_screen:
+screen sis_webcam_screen:
+    tag comp_screen
     if connected == False:
         add "buttons/computer_window_06.png" pos 270,150
 
@@ -119,7 +122,8 @@ screen sis_webcam_screen tag comp_screen:
         xpos 816
         ypos 154
 
-screen sis_list tag comp_screen:
+screen sis_list:
+    tag comp_screen
     add "buttons/computer_window_04.png" pos 270,150
 
     imagebutton:
@@ -129,7 +133,8 @@ screen sis_list tag comp_screen:
         xpos 816
         ypos 154
 
-screen sis_livecrush tag comp_screen:
+screen sis_livecrush:
+    tag comp_screen
     add "buttons/computer_window_05.png" pos 270,150
 
     imagebutton:
@@ -139,7 +144,8 @@ screen sis_livecrush tag comp_screen:
         xpos 816
         ypos 154
 
-screen sis_recycle tag comp_screen:
+screen sis_recycle:
+    tag comp_screen
     add "buttons/computer_window_03.png" pos 270,150
 
     imagebutton:
@@ -156,7 +162,8 @@ screen sis_recycle tag comp_screen:
         xpos 290
         ypos 210
 
-screen sis_family tag comp_screen:
+screen sis_family:
+    tag comp_screen
     add "buttons/computer_window_01.png" pos 270,150
 
     imagebutton:
@@ -187,7 +194,8 @@ screen sis_family tag comp_screen:
         xpos 490
         ypos 210
 
-screen sis_newfolder tag comp_screen:
+screen sis_newfolder:
+    tag comp_screen
     add "buttons/computer_window_02.png" pos 270,150
 
     imagebutton:
@@ -211,7 +219,8 @@ screen sis_newfolder tag comp_screen:
         xpos 390
         ypos 210
 
-screen sis_email tag comp_screen:
+screen sis_email:
+    tag comp_screen
     add "buttons/computer_window_11.png" pos 135,150
 
     imagebutton:
